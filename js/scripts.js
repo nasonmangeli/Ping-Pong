@@ -27,6 +27,10 @@ $(document).ready(function(){
 
     //Get value of numberEntered
     var numberEntered = parseInt($("#number").val());
+    //Clear input field and ul#output before append
+    $('#number').val("");
+    $('ul').empty();
+
 
     //Call the function pingpongFilter and append each element of its resulting array to ul with id="output" tag
     pingpongFilter(numberEntered).forEach(function(number) {
