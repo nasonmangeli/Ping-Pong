@@ -17,6 +17,10 @@ var pingpongFilter = function(numberEntered){
 return outPuts;
 };
 
+var clearPrevious = function(){
+  $('#number').val("");
+  $('ul').empty();
+}
 
 
 //Front-end logic
@@ -27,22 +31,13 @@ $(document).ready(function(){
 
     //Get value of numberEntered
     var numberEntered = parseInt($("#number").val());
-    //Clear input field and ul#output before append
-    $('#number').val("");
-    $('ul').empty();
 
+    //Clear input field and ul#output before append
+    clearPrevious();
 
     //Call the function pingpongFilter and append each element of its resulting array to ul with id="output" tag
     pingpongFilter(numberEntered).forEach(function(number) {
       $('#output').append('<li>'+number+'</li>')
     })
-
-      // $('#number').val("");
-      // $('ul').empty();
-      // for (var i = 0; i < array.length; i++) {
-      //   $('ul').append('<li>'+output+'</li>')
-      // }
-
-
   });
 });
